@@ -6,7 +6,6 @@ import {By} from '@angular/platform-browser';
 import {setupCourses} from '../common/setup-test-data';
 
 describe('CoursesCardListComponent', () => {
-
     let component: CoursesCardListComponent;
     let fixture: ComponentFixture<CoursesCardListComponent>;
     let el: DebugElement;
@@ -21,9 +20,9 @@ describe('CoursesCardListComponent', () => {
             fixture = TestBed.createComponent(CoursesCardListComponent);
             component = fixture.componentInstance;
             el = fixture.debugElement;
-
         });
     }));
+
 //Prueba de creacion del componente
     it('should create the component', () => {
         expect(component).toBeTruthy();
@@ -35,7 +34,6 @@ describe('CoursesCardListComponent', () => {
         const cards = el.queryAll(By.css(".course-card"));
         expect(cards).toBeTruthy("Could not find cards");
         expect(cards.length).toBe(12, "Unexpected number of courses");
-
     });
 //Deberia mostrarnos el primer curso
     it('should display the first course', () => {

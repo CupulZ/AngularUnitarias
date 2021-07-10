@@ -10,33 +10,22 @@ import {filter, tap} from 'rxjs/operators';
   styleUrls: ['./courses-card-list.component.css']
 })
 export class CoursesCardListComponent implements OnInit {
-
   @Input()
   courses: Course[];
 
   @Output()
   courseEdited = new EventEmitter();
 
-  constructor(private dialog: MatDialog) {
+  constructor(private dialog: MatDialog) { }
 
-  }
-
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
 
   editCourse(course: Course) {
-
     const dialogConfig = new MatDialogConfig();
-
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-
     dialogConfig.data = course;
-
     const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig);
-
-
     dialogRef.afterClosed()
       .pipe(
         filter(val => !!val),
@@ -47,12 +36,3 @@ export class CoursesCardListComponent implements OnInit {
   }
 
 }
-
-
-
-
-
-
-
-
-
